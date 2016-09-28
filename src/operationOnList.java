@@ -8,14 +8,37 @@ public class operationOnList {
         return element;
     }
 
-    //insert an element in the list
-    public void insertElement(int data, listElement head){
+    //insert first element after head in the list
+    public void insertFirstElement(int data, listElement head){
         listElement newElement=new listElement(data);
         head.setNext(newElement);
     }
 
+    //insert element at the end
+    public void insertElementAtEnd(int data, listElement head){
+        listElement element=traverseList(head);
+        listElement newElement=new listElement(data);
+        element.setNext(newElement);
+    }
+
+    //insert element at the beginning
+    public listElement insertElementAtBeginning(int data, listElement head){
+        listElement newElement=new listElement(data);
+        newElement.setNext(head);
+        return newElement;
+    }
+
+
     //traversing the list
-    public void traverseList(listElement element){
+    public listElement traverseList(listElement element){
+        while(element.getNext()!= null){
+            element=element.getNext();
+        }
+        return element;
+    }
+
+    //printing the list
+    public void printList(listElement element){
         while(element.getNext()!= null){
             System.out.println("Value is " + element.getData());
             element=element.getNext();
@@ -23,3 +46,4 @@ public class operationOnList {
         System.out.println("Last element is " + element.getData());
     }
 }
+

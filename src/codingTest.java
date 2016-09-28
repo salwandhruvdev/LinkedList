@@ -9,10 +9,24 @@ public class codingTest {
         listElement head=operation.createList(100);
 
         //adding first element in the list
-        operation.insertElement(200,head);
+        operation.insertFirstElement(200, head);
 
+        System.out.println("List before insertion at end");
         //Traversing the list
-        operation.traverseList(head);
+        operation.printList(head);
+
+        //Inserting element at end of list
+        operation.insertElementAtEnd(300,head);
+
+        System.out.println("List after insertion at end");
+        operation.printList(head);
+
+        //Inserting element at the beginning
+        head=operation.insertElementAtBeginning(50, head);
+        System.out.println("List after insertion at the beginning");
+        operation.printList(head);
+
+
 
 
     }
