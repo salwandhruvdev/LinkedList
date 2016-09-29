@@ -28,10 +28,26 @@ public class operationOnList {
         return newElement;
     }
 
+    //insert element in the middle
+    public void insertElementInMiddle(int data, int index, listElement head){
+        listElement element=traverseListByIndex(head,index);
+        listElement newElement=new listElement(data);
+        newElement.setNext(element.getNext());
+        element.setNext(newElement);
+    }
+
 
     //traversing the list
     public listElement traverseList(listElement element){
         while(element.getNext()!= null){
+            element=element.getNext();
+        }
+        return element;
+    }
+
+    //traversing the list to a particular index
+    public listElement traverseListByIndex(listElement element, int index){
+        for(int i=0; i<index; i++){
             element=element.getNext();
         }
         return element;

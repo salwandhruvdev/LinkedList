@@ -26,6 +26,11 @@ public class codingTest {
         System.out.println("List after insertion at the beginning");
         operation.printList(head);
 
+        //Inserting element in the middle
+        System.out.println("List after insertion in the middle");
+        operation.insertElementInMiddle(250,2,head);
+        operation.printList(head);
+
 
 
 
